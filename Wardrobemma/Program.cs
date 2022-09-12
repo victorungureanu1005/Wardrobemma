@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Wardrobemma.Data;
+
 namespace Wardrobemma
 {
     public class Program
@@ -7,7 +10,11 @@ namespace Wardrobemma
             var builder = WebApplication.CreateBuilder(args);
 
             // Add services to the container.
+            builder.Services.AddDbContext<WardrobeContext>(options => options.UseSqlServer(builder
+                .Configuration.GetConnectionString("DefaultConnection")));
             builder.Services.AddRazorPages();
+            builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+            builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
             var app = builder.Build();
 
