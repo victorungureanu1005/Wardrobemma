@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32505.173
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wardrobemma", "Wardrobemma\Wardrobemma.csproj", "{75E4850E-49A2-4954-A980-CEF4545AB524}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{75E4850E-49A2-4954-A980-CEF4545AB524}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{75E4850E-49A2-4954-A980-CEF4545AB524}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{75E4850E-49A2-4954-A980-CEF4545AB524}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{75E4850E-49A2-4954-A980-CEF4545AB524}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9E6E8E2-AD17-4EF4-9FAD-98082ABCE0F1}
+	EndGlobalSection
+EndGlobal
