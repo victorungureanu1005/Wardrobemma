@@ -34,7 +34,7 @@ namespace Wardrobemma.Models
         public int? GarmentSecondaryTypeID { get; set; }
         public GarmentSecondaryType? GarmentSecondaryType { get; set; }
 
-        //Many to Many
+        //Many to Many 
         public ICollection<GarmentStyle> GarmentStyles { get; set; }
         public ICollection<GarmentColour> GarmentColours { get; set; }
         public ICollection<GarmentMaterial> GarmentMaterials { get; set; }
