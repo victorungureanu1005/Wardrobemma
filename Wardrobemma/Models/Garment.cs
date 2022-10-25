@@ -28,11 +28,11 @@ namespace Wardrobemma.Models
         public WeatherNames Weather{get;set;}
 
         #region NavigationTypes
-        //Many to One
-        public int? GarmentPrimaryTypeID { get; set; }
-        public GarmentPrimaryType? GarmentPrimaryType { get; set; }
-        public int? GarmentSecondaryTypeID { get; set; }
-        public GarmentSecondaryType? GarmentSecondaryType { get; set; }
+        //Many to One 
+        //public int? GarmentPrimaryTypeID { get; set; }
+        //public GarmentPrimaryType? GarmentPrimaryType { get; set; }
+        public int? GarmentTypeID { get; set; }
+        public GarmentType? GarmentType { get; set; }
 
         //Many to Many 
         public ICollection<GarmentStyle> GarmentStyles { get; set; }
