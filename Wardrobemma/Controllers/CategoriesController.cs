@@ -1,14 +1,24 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Wardrobemma.Data;
 
 namespace Wardrobemma.Controllers
 {
     public class CategoriesController : Controller
     {
-        // GET: CategoriesController
-        public ActionResult Index()
+
+        private readonly WardrobeContext _context;
+        public CategoriesController(WardrobeContext context)
         {
-            return View();
+            _context = context;
+        }
+
+
+        // GET: CategoriesController
+        public async Task<IActionResult> Index()
+        {
+            return View(await _context.GarmentColours.ToListAsync());
         }
 
         // GET: CategoriesController/Details/5
