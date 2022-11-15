@@ -17,27 +17,35 @@ namespace Wardrobemma.Controllers
 
 
         // GET: CategoriesController
-        public async Task<IActionResult> Index(string id)
+        public async Task<IActionResult> Index(string? id)
         {
             ViewData["CurrentId"] = id;
 
             var viewModel = new CategoryViewModel();
 
-            switch (id) { 
-            case "Types": 
-                viewModel.Types = await _context.GarmentTypes.ToListAsync();
+            switch (id)
+            {
+                case "Types":
+                    viewModel.Types = await _context.GarmentTypes.ToListAsync();
+                    viewModel.IsPopulated = true;
                     return View(viewModel);
-            case "Colours":
+                case "Colours":
                     viewModel.Colours = await _context.GarmentColours.ToListAsync();
+                    viewModel.IsPopulated = true;
                     return View(viewModel);
                 case "Materials":
                     viewModel.Materials = await _context.GarmentMaterials.ToListAsync();
+                    viewModel.IsPopulated = true;
                     return View(viewModel);
                 case "Styles":
                     viewModel.Styles = await _context.GarmentStyles.ToListAsync();
+                    viewModel.IsPopulated = true;
+                    return View(viewModel);
+                default:
+                    viewModel.IsPopulated = false;
                     return View(viewModel);
             }
-               
+
             return View(viewModel);
         }
 

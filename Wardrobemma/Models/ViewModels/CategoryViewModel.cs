@@ -8,5 +8,7 @@
         public IEnumerable<GarmentMaterial> Materials { get; set; }
 
         public IEnumerable<GarmentStyle> Styles { get; set; }
+
+        public bool IsPopulated { get; set; }
     }
 }

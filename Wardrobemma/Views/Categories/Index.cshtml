@@ -1,5 +1,4 @@
-﻿
-@model CategoryViewModel
+﻿@model CategoryViewModel
 
 
 @*
@@ -35,20 +34,34 @@
     </nav>
 </header>
 
+
+
+
+
+
 @{
-    string id = (string?)ViewData["CurrentId"];
-    if (string.IsNullOrWhiteSpace(id)){ }
-else{
-    <p>
+    string? id = (string?)ViewData["CurrentId"];
+    if (string.IsNullOrWhiteSpace(id))
+    {
+    }
+    else
+    {
+        <p>
             <a asp-controller=@("Garment"+id) asp-action="Create">Create New</a>
-    </p>
-}
+        </p>
+    }
 }
 
+@if (Model.IsPopulated is false)
+{
+    <p>
+        Here you can create your own Categories for the Garments.
+    </p>
+}
 @if (Model.Types is not null)
 {
-    <table class="table">
-        <thead>
+    <table class="table-primary">
+        <thead class="thead-dark">
             <tr>
                 <th>
                     Name
@@ -74,10 +87,10 @@ else{
     </table>
 }
 
-@if(Model.Colours is not null)
+@if (Model.Colours is not null)
 {
     <table class="table">
-        <thead>
+        <thead class="thead-dark">
             <tr>
                 <th>
                     Name
@@ -101,14 +114,14 @@ else{
             }
         </tbody>
     </table>
-    }
+}
 
 
 
 @if (Model.Materials is not null)
 {
     <table class="table">
-        <thead>
+        <thead class="thead-dark">
             <tr>
                 <th>
                     Name
@@ -136,29 +149,31 @@ else{
 
 @if (Model.Styles is not null)
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th>
-                    Name
-                </th>
-                <th></th>
-            </tr>
-        </thead>
-        <tbody>
-            @foreach (var item in Model.Styles)
-            {
-                <tr>
-                    <td>
-                        @Html.DisplayFor(modelItem => item.Name)
-                    </td>
-                    <td>
-                        <a asp-controller="GarmentStyles" asp-action="Edit" asp-route-id="@item.GarmentStyleID">Edit</a> |
-                        <a asp-controller="GarmentStyles" asp-action="Details" asp-route-id="@item.GarmentStyleID">Details</a> |
-                        <a asp-controller="GarmentStyles" asp-action="Delete" asp-route-id="@item.GarmentStyleID">Delete</a>
-                    </td>
+    <div class="w3-container">
+        <table class="table w3-table-all">
+            <thead>
+                <tr class="w3-red">
+                    <th>
+                        Name
+                    </th>
+                    <th></th>
                 </tr>
-            }
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+                @foreach (var item in Model.Styles)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Name)
+                        </td>
+                        <td>
+                            <a asp-controller="GarmentStyles" asp-action="Edit" asp-route-id="@item.GarmentStyleID">Edit</a> |
+                            <a asp-controller="GarmentStyles" asp-action="Details" asp-route-id="@item.GarmentStyleID">Details</a> |
+                            <a asp-controller="GarmentStyles" asp-action="Delete" asp-route-id="@item.GarmentStyleID">Delete</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
 }
