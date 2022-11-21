@@ -6255,7 +6255,8 @@
   const SELECTOR_TARGET_LINKS = '[href]';
   const SELECTOR_NAV_LIST_GROUP = '.nav, .list-group';
   const SELECTOR_NAV_LINKS = '.nav-link';
-  const SELECTOR_NAV_ITEMS = '.nav-item';
+  const SELECTOR_NAV_ITEMS = '.
+';
   const SELECTOR_LIST_ITEMS = '.list-group-item';
   const SELECTOR_LINK_ITEMS = `${SELECTOR_NAV_LINKS}, ${SELECTOR_NAV_ITEMS} > ${SELECTOR_NAV_LINKS}, ${SELECTOR_LIST_ITEMS}`;
   const SELECTOR_DROPDOWN = '.dropdown';

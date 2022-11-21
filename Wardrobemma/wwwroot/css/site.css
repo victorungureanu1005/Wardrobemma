@@ -16,3 +16,12 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+
+.card-style {
+    background-color: lightgray
+}
+
+.card-header-style {
+    background-color: white
+}
